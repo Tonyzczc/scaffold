@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easy.scaffold.work.dao.TitleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.easy.scaffold.work.entity.Title">
+        <result column="id" property="id" />
+        <result column="workId" property="workid" />
+        <result column="message" property="message" />
+        <result column="type" property="type" />
+        <result column="createDate" property="createdate" />
+        <result column="createUser" property="createuser" />
+        <result column="updateDate" property="updatedate" />
+        <result column="updateUser" property="updateuser" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,workId, message, type, createDate, createUser, updateDate, updateUser
+    </sql>
+
+</mapper>

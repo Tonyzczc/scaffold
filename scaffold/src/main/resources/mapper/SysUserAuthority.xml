@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easy.scaffold.sys.sysUserAuthority.dao.SysUserAuthorityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.easy.scaffold.sys.sysUserAuthority.entity.SysUserAuthority">
+        <id column="user_authority_id" property="userAuthorityId" />
+        <result column="user_id" property="userId" />
+        <result column="authority_id" property="authorityId" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_authority_id, user_id, authority_id, create_time, update_time
+    </sql>
+
+    <select id="findByUserId" resultMap="BaseResultMap"  parameterType="java.lang.String">
+        select
+            <include refid="Base_Column_List"></include>
+        from sys_user_authority where user_id = #{userId}
+    </select>
+</mapper>
